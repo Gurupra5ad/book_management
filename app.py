@@ -30,14 +30,13 @@ def menu():
 def prompt_add_book():
     name = input("Enter the book name : ")
     author = input("Enter the author name: ")
-
     database.add_book(name,author)
 
 
 def list_books():
     books = database.get_all_books()
     for book in books:
-        read = 'YES' if book['read']=='1' else 'NO'
+        read = 'YES' if book['read'] else 'NO'
         print(f"{book['name']} by {book['author']}, read : {read}")
 
 def prompt_read_book():
